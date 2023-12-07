@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Event Handling Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    #colorBox {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Keyboard Event Handling Practice</h1>
+
+  <div id="colorBox"></div>
+
+  <script>
+    // Your JavaScript code for keyboard event handling goes here
+    const colorBox = document.getElementById('colorBox');
+
+    document.addEventListener('keydown', function(event) {
+      let color;
+     
+
+      switch(event.key.toUpperCase()) {
+        case 'R':
+          color = 'red';
+          break;
+        case 'G':
+          color = 'green';
+          break;
+        case 'B':
+          color = 'blue';
+          break;
+        default:
+          return; // Exit the function if the pressed key is not R, G, or B
+      }
+
+      colorBox.style.backgroundColor = color;
+    });
+  </script>
+
+</body>
+</html>

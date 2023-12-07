@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Phases Example</title>
+  <style>
+    div {
+      padding: 20px;
+      margin: 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="outer">
+    <div id="middle">
+      <div id="inner">Click me!</div>
+    </div>
+  </div>
+
+  <script>
+    // Function to log the event phase
+    function logEventPhase(event, phaseName) {
+      console.log(`Event Phase in ${phaseName} Div:`, event.eventPhase);
+    }
+
+    // Add click event listeners to each div with different phases
+    document.getElementById('outer').addEventListener('click', function(event) {
+      logEventPhase(event, 'Outer');
+    });
+
+    document.getElementById('middle').addEventListener('click', function(event) {
+      logEventPhase(event, 'Middle');
+    });
+
+    document.getElementById('inner').addEventListener('click', function(event) {
+      logEventPhase(event, 'Inner');
+    });
+  </script>
+
+</body>
+</html>

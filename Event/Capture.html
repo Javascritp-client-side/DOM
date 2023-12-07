@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Capturing Example</title>
+  <style>
+    div {
+      padding: 20px;
+      margin: 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="outer">
+    <div id="middle">
+      <div id="inner">Click me!</div>
+    </div>
+  </div>
+
+  <script>
+    // Add click event listener with capturing phase
+    document.getElementById('outer').addEventListener('click', function(event) {
+      alert('Capturing phase: Outer div clicked!');
+      console.log('Event Target:', event.target.id);
+      console.log('Event Phase:', event.eventPhase);
+    }, true);
+  </script>
+
+</body>
+</html>
